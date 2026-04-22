@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VapeCloud - A legjobb felhők neked</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-animation"></div>
+
+    <header>
+        <div class="logo-container">
+            <h1 class="glitch" data-text="VapeCloud">VapeCloud</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Föoldal</a></li>
+                <li><a href="#products">Termékek</a></li>
+                <li class="cart-nav" onclick="toggleCart()">KOSZÁR (<span id="cart-count">0</span>)</li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="cart-sidebar" class="cart-sidebar hidden">
+        <div class="cart-header">
+            <h3>A Te KoszárAD</h3>
+            <span class="close-btn" onclick="toggleCart()">&times;</span>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <p>Összesen: <span id="cart-total">0.0000</span> BTC</p>
+            <button class="stylish-btn checkout-btn" onclick="openPayment()">CHECKOUT (FIZETÉS)</button>
+        </div>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2 class="reveal">NE MARADJ LE A FELHÖKRÖL!</h2>
+            <p>VapeCluod: Prémium minöség, diszkrét szállitás és futurisztikus élmény.</p>
+            <button class="cta-btn" onclick="scrollToProducts()">MEGNÉZEM A KINÁLATOT</button>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <h2 class="section-title"></h2>
+        <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <div id="product-detail-view" class="detail-view hidden">
+        <div class="detail-container">
+            <span class="close-detail" onclick="closeDetails()">&times;</span>
+            
+            <div class="detail-main-layout">
+                <div class="detail-left">
+                    <div class="main-product-img-placeholder">
+                        <img id="detail-main-img" src="" style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+                    </div>
+                    
+                </div>
+
+                <div class="detail-right">
+                    <div class="detail-header-flex">
+                        <h2 id="detail-title">Termék név</h2>
+                        <div class="price-badge">
+                            <span class="old-price" id="detail-old-price">0.0000 BTC</span>
+                            <span class="current-price" id="detail-price">0.0000 BTC</span>
+                        </div>
+                    </div>
+
+                    <p class="detail-short-info" id="detail-short-info">Rövid leírás...</p>
+                    <div class="detail-description" id="detail-desc">Hosszú leírás...</div>
+
+                    <div class="purchase-section">
+                        <div class="quantity-selector">
+                            <button onclick="changeQty(-1)">-</button>
+                            <span id="qty-val">1</span>
+                            <button onclick="changeQty(1)">+</button>
+                        </div>
+                        <button class="stylish-btn" id="add-to-cart-btn">KOSÁRBA RAKÁS - <span id="btn-price">0.0000</span> BTC</button>
+                    </div>
+
+                    <div class="trust-elements">
+                        <div class="trust-item">🚚 Raktáron! Szállitás 1-2 munkanapon belül</div>
+                        <div class="trust-item">🤫 Diszkrét csomagolás és Crypto fizetés</div>
+                        <div class="trust-item">🛡️ 100% Pénzvisszafizetési Garancia</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-section">
+                <h3>Vásárlói visszajelzések</h3>
+                <div id="reviews-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="payment-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>BIZTONSÁGOS CHECKOUT</h3>
+            <p>Végösszeg: <span id="final-amount"></span> BTC</p>
+            <div class="btc-address">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</div>
+            <div class="spinner"></div>
+            <p class="status-text">Várakozás a bloklánc visszaigazolásra...</p>
+        </div>
+    </div>
+
+    <footer id="about">
+        <div class="certificate-box">
+            <h4>MINÖSÉGELLENŐRZÉSI TANÚSÍTVÁNY</h4>
+            <div class="qr-placeholder">QR CODE</div>
+            <p class="cert-id">ID: VC-99842-OK</p>
+        </div>
+        <p>&copy; 2026 VapeCluod Inc. - Minden jog fenntartva.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
