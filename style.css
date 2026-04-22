@@ -154,6 +154,95 @@ nav ul li a:hover {
 .detail-left, .detail-right { flex: 1; min-width: 300px; }
 .main-product-img-placeholder { width: 100%; aspect-ratio: 1/1; background: #1a1a1a; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 1px solid #333; font-weight: bold; color: #444; }
 
+/* --- TRANZAKCIÓ MONITOR (CHATBOX) --- */
+.transaction-monitor {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    background: #0a0a15;
+    border: 1px solid var(--neon-blue);
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    z-index: 10000;
+    animation: slideInRight 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(120%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.monitor-header {
+    background: #111;
+    padding: 10px;
+    border-bottom: 1px solid var(--neon-blue);
+    display: flex;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #00ff88;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 0 10px #00ff88;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0.3; } }
+
+.monitor-title { font-size: 0.7rem; font-weight: bold; color: var(--neon-blue); flex-grow: 1; }
+
+.close-btn-small { cursor: pointer; color: var(--neon-pink); font-size: 1.2rem; }
+
+.monitor-body { padding: 15px; }
+
+.logs {
+    height: 80px;
+    overflow-y: hidden;
+    font-size: 0.65rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.amount-text { font-weight: bold; color: var(--neon-pink); margin-bottom: 10px; font-size: 0.9rem; }
+
+.btc-address-container label { font-size: 0.6rem; color: #555; display: block; }
+
+.btc-address {
+    background: #111;
+    padding: 8px;
+    font-size: 0.7rem;
+    word-break: break-all;
+    border: 1px solid #222;
+    color: var(--neon-blue);
+}
+
+.monitor-footer {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #222;
+    padding-top: 10px;
+}
+
+.mini-spinner {
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgba(0, 255, 255, 0.2);
+    border-top-color: var(--neon-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.status-text { font-size: 0.7rem; color: #aaa; }
+
 /* --- MOBIL RESPONSIVITY --- */
 @media (max-width: 768px) {
     /* Kevesebb padding mobilon */
