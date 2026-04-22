@@ -134,11 +134,31 @@ function updateCartUI() {
 }
 
 function openPayment() {
-    if (cart.length === 0) return alert("Üres a koszár!");
+   if (cart.length === 0) return alert("Üres a koszár!");
+    
     document.getElementById('final-amount').innerText = document.getElementById('cart-total').innerText;
-    document.getElementById('payment-modal').classList.remove('hidden');
-}
+    const modal = document.getElementById('payment-modal');
+    modal.classList.remove('hidden');
 
+    // Chat log szimuláció
+    const logs = document.getElementById('transaction-logs');
+    const messages = [
+        "> Node keresése...",
+        "> Csatlakozás: 184.22.1.9:9050",
+    ];
+
+    let i = 0;
+    const interval = setInterval(() => {
+        if (i < messages.length) {
+            const p = document.createElement('p');
+            p.innerText = messages[i];
+            logs.appendChild(p);
+            i++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 1500);
+}
 function closeModal() {
     document.getElementById('payment-modal').classList.add('hidden');
 }
