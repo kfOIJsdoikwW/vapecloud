@@ -96,17 +96,32 @@
         </div>
     </div>
 
-    <div id="payment-modal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h3>BIZTONSÁGOS CHECKOUT</h3>
-            <p>Végösszeg: <span id="final-amount"></span> BTC</p>
-            <div class="btc-address">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</div>
-            <div class="spinner"></div>
-            <p class="status-text">Várakozás a bloklánc visszaigazolásra...</p>
+<div id="payment-modal" class="transaction-monitor hidden">
+    <div class="monitor-header">
+        <span class="status-dot"></span>
+        <span class="monitor-title">BLOCKCHAIN TERMINAL v2.1</span>
+        <span class="close-btn-small" onclick="closeModal()">&times;</span>
+    </div>
+    <div class="monitor-body">
+        <div id="transaction-logs" class="logs">
+            <p>> Kapcsolódás a hálózathoz...</p>
+            <p>> Protokoll: CRYPTO-SHIELD v4</p>
+        </div>
+        
+        <div class="payment-info">
+            <p class="amount-text">FIZETENDŐ: <span id="final-amount"></span> BTC</p>
+            <div class="btc-address-container">
+                <label>CÍM:</label>
+                <div class="btc-address">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</div>
+            </div>
+        </div>
+
+        <div class="monitor-footer">
+            <div class="mini-spinner"></div>
+            <p class="status-text">Várakozás visszaigazolásra...</p>
         </div>
     </div>
-
+</div>
     <footer id="about">
         <div class="certificate-box">
             <h4>MINÖSÉGELLENŐRZÉSI TANÚSÍTVÁNY</h4>
