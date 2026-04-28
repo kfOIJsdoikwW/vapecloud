@@ -15,7 +15,7 @@ const products = [
         comments: [{user: "Anonym", text: "Ez a legjobb íz sztem."}]
     },
     { 
-        id: 3, name: "Purple Hazze Max 2026", price: 0.0025, oldPrice: 0.0032,
+        id: 3, name: "Purple Kussh Max 2026", price: 0.0025, oldPrice: 0.0032,
         image: "purplehaze.png",
         short: "Lila köd, ami mindent elfed.",
         desc: "Klasszikus aroma modern köntösben. A legnépszerübb választásunk.",
